@@ -14,11 +14,12 @@ compileTestJava.options.encoding = "UTF-8"
 
 repositories {
     mavenCentral()
+    maven { url 'https://repo1.maven.org/maven2' }
 }
 
 dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter:5.10.2'
-    testImplementation 'com.codeborne:selenide:6.19.1'
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.10.3'
+    testImplementation 'com.codeborne:selenide:7.2.3'
 }
 
 test {
