@@ -5,14 +5,16 @@ import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
-import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.open;
 
 public class CardDeliveryTest {
-    
+
     private String generateDate(int daysToAdd) {
         return LocalDate.now()
                 .plusDays(daysToAdd)
@@ -23,6 +25,11 @@ public class CardDeliveryTest {
     public void setUp() {
         Configuration.baseUrl = "http://localhost:9999";
         Configuration.browser = "chrome";
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--disable-dev-shm-usage");
+        options.addArguments("--no-sandbox");
+        options.addArguments("--headless");
+        Configuration.browserCapabilities = options;
         open("/");
     }
 
