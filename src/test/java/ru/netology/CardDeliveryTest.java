@@ -35,11 +35,6 @@ public class CardDeliveryTest {
         open("/");
     }
 
-    @AfterEach
-    public void screen() {
-        Selenide.screenshot("screen_" + System.currentTimeMillis() + ".png");
-    }
-
     @Test
     public void shouldSubmitFormSuccessfully() {
 
