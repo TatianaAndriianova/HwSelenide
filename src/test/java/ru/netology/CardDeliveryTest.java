@@ -2,6 +2,8 @@ package ru.netology;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.Selenide;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.Keys;
@@ -31,6 +33,11 @@ public class CardDeliveryTest {
         options.addArguments("--headless");
         Configuration.browserCapabilities = options;
         open("/");
+    }
+
+    @AfterEach
+    public void screen() {
+        Selenide.screenshot("screen_" + System.currentTimeMillis() + ".png");
     }
 
     @Test
