@@ -33,4 +33,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: screenshots
-          path: target/surefire-reports/*.png
+          path: build/reports/tests/test/*.png
