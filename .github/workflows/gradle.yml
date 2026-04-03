@@ -27,10 +27,3 @@ jobs:
         # Для проектов на базе Selenide необходимо добавить параметр для запуска браузера
         # в headless режиме -Dselenide.headless=true, параметр --info должен остаться
         run: ./gradlew test --info
-        continue-on-error: true
-
-      - name: Upload screenshots
-        uses: actions/upload-artifact@v4
-        with:
-          name: screenshots
-          path: build/reports/tests/*.png
