@@ -25,14 +25,9 @@ public class CardDeliveryTest {
 
     @BeforeEach
     public void setUp() {
-        Configuration.baseUrl = "http://localhost:9999";
+        Configuration.baseUrl = "http://localhost:9999/";
         Configuration.browser = "chrome";
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--disable-dev-shm-usage");
-        options.addArguments("--no-sandbox");
-        options.addArguments("--headless");
-        Configuration.browserCapabilities = options;
-        open("/");
+        open("");
     }
 
     @Test
